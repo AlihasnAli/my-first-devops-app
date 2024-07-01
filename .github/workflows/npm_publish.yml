@@ -26,7 +26,7 @@ jobs:
 
   third-job:    
       name: Third Job
-      needs: [build-nextjs, Test Next.js]
+      needs: [build-nextjs, test-nextjs]
       runs-on: ubuntu-latest
       steps:
         - name: Third Step in Test
