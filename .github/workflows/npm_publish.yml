@@ -41,4 +41,4 @@ jobs:
             path: my-artifact
             pattern: job*
             merge-multiple: true
-          run: ls -al
+        - run: ls -al
