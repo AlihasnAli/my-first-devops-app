@@ -11,18 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: First Step in Build
-        run: echo "First Step in Build"
+        run: echo "First Step in Build" > test1.txt
       
-      - name: Create a File
-        run: echo "First Step in Build" > test.txt
 
   test-nextjs:    
     name: Test Next.js
-    needs: build-nextjs
     runs-on: ubuntu-latest
     steps:
       - name: First Step in Test
-        run: ls -al
+        run: echo "First Step in Test" > test2.txt
 
   third-job:    
       name: Third Job
