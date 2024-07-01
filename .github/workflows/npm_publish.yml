@@ -17,8 +17,9 @@ jobs:
         run: touch test.txt
 
 
-  test-nextjs:
+  test-nextjs:    
     name: Test Next.js
+    needs: build-nextjs
     runs-on: ubuntu-latest
     steps:
       - name: First Step in Test
