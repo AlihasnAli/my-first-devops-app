@@ -5,22 +5,22 @@ on:
     branches:
       - master
 
-  jobs:
-    build-nextjs:
-      name: Build Next.js
-      runs-on: ubuntu-latest
-      steps:
-        - name: First Step in Build
-          run: echo "First Step in Build"
-        
-        - name: Create a File
-          run: touch test.txt
+jobs:
+  build-nextjs:
+    name: Build Next.js
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Step in Build
+        run: echo "First Step in Build"
+      
+      - name: Create a File
+        run: touch test.txt
 
 
-    test-nextjs:
-      name: Test Next.js
-      runs-on: ubuntu-latest
-      steps:
-        - name: First Step in Test
-          run: echo "ls -al"
+  test-nextjs:
+    name: Test Next.js
+    runs-on: ubuntu-latest
+    steps:
+      - name: First Step in Test
+        run: echo "ls -al"
 
