@@ -1,4 +1,4 @@
-heck downname: Next.js Pipeline
+name: Next.js Pipeline
 
 on:
   push:
