@@ -14,8 +14,7 @@ jobs:
         run: echo "First Step in Build"
       
       - name: Create a File
-        run: touch test.txt
-
+        run: echo "First Step in Build" > test.txt
 
   test-nextjs:    
     name: Test Next.js
@@ -23,5 +22,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: First Step in Test
-        run: echo "ls -al"
+        run: ls -al
 
+  if: ${{ github.ref == 'refs/heads/master' }}
+  test-nextjs:    
+      name: Third Job
+      needs: [build-nextjs, Test Next.js]
+      runs-on: ubuntu-latest
+      steps:
+        - name: Third Step in Test
+          run: ls -al
