@@ -38,7 +38,5 @@ jobs:
           run: ls -al
         - uses: actions/download-artifact@v4
           with:
-            path: my-artifact
-            pattern: job*
-            merge-multiple: true
+
         - run: ls -al
