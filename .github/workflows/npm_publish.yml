@@ -1,4 +1,4 @@
-name: Next.js Pipeline
+heck downname: Next.js Pipeline
 
 on:
   push:
@@ -35,4 +35,10 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: Third Step in Test
+          run: ls -al
+        - uses: actions/download-artifact@v4
+          with:
+            path: my-artifact
+            pattern: job*
+            merge-multiple: true
           run: ls -al
