@@ -37,6 +37,4 @@ jobs:
         - name: Third Step in Test
           run: ls -al
         - uses: actions/download-artifact@v4
-          with:
-
         - run: ls -al
