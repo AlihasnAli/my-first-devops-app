@@ -25,9 +25,9 @@ jobs:
       - name: First Step in Test
         run: echo "First Step in Test" > test2.txt
       - uses: actions/upload-artifact@v4
-      with:
-        name: job2 text file
-        path: test2.txt
+        with:
+          name: job2 text file
+          path: test2.txt
 
   third-job:    
       name: Third Job
