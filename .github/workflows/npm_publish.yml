@@ -24,7 +24,6 @@ jobs:
       - name: First Step in Test
         run: ls -al
 
-  if: ${{ github.ref == 'refs/heads/master' }}
   third-job:    
       name: Third Job
       needs: [build-nextjs, Test Next.js]
