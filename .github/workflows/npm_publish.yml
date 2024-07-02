@@ -23,10 +23,11 @@ jobs:
           npm install \
           npm install -g netlify-cli
 
+      - name: Build i
+        run: npm i
+      
       - name: Build
-        run: |
-          npm i \
-          npm run build
+        run: npm run build       
 
       - name: List 1
         run: ls -l out
