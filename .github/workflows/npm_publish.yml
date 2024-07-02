@@ -28,14 +28,17 @@ jobs:
           npm i \
           npm run build
 
+      - name: List 1
+          run: ls -l out
+
       - name: Upload Artifact       
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: ./out/
+          path: out
 
-      - name: List
-        run: ls -al
+      - name: List 2
+        run: ls -l out
 
       - name: Deploy Artifact       
         run: |
