@@ -34,10 +34,10 @@ jobs:
           name: buildBundle
           path: out
 
-      - name: Deploy Artifact       
+      - name: Deploy Artifactx       
         run: |
           netlify deploy --prod \
-            --dir=out \
+            --dir=buildBundle \
             --site ${{ secrets.NETLIFY_SITE_ID }} \
             --auth ${{ secrets.NETLIFY_API_TOKEN }}
  
