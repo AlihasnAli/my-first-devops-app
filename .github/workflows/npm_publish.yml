@@ -6,35 +6,26 @@ on:
       - master
 
 jobs:
-  build-nextjs:
-    name: Build Next.js
+  job-npm:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: First Step in Build
-        run: echo "First Step in Build" > test1.txt
-      - uses: actions/upload-artifact@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.0.2
         with:
-          name: job1 text file
-          path: test1.txt
-      
+          node-version: '20'
 
-  test-nextjs:    
-    name: Test Next.js
-    runs-on: ubuntu-latest
-    steps:
-      - name: First Step in Test
-        run: echo "First Step in Test" > test2.txt
-      - uses: actions/upload-artifact@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload Artifact       
+        uses: actions/upload-artifact@v4
         with:
-          name: job2 text file
-          path: test2.txt
-
-  third-job:    
-      name: Third Job
-      needs: [build-nextjs, test-nextjs]
-      runs-on: ubuntu-latest
-      steps:
-        - name: Third Step in Test
-          run: ls -al
-        - uses: actions/download-artifact@v4
-        - run: ls -al
+          name: Application Build
+          path: out
