@@ -20,7 +20,7 @@ jobs:
 
       - name: Install Dependencies
         run: | 
-          npm install
+          npm install \
           && npm install -g netlify-cli
 
       - name: Build
